@@ -38,18 +38,11 @@ command=rclone mount gdrive: <-- Change 'gdrive' to your remote name.
 ...
 command=rclone mount gdrive: /media <-- Change '/media' to your custom path. Remember this path is within the container and not your local computer.
 
-Additionally, you can remove 'RUN mkdir -p /media' in the Dockerfile if you use custom path.
+Additionally, you must modify 'mkdir -p /media' in the Dockerfile if you use custom path.
 ...
 ```
 
 * Make a copy of that file and store it inside the project.
-
-## 2. Get `jellyfin`
-* Go to https://repo.jellyfin.org/?path=/server/ubuntu/latest-stable/amd64
-* Download 2 files: `jellyfin-server_<version>+ubu2204_amd64.deb` and `jellyfin-web_<version>+ubu2204_all.deb`. The others can be ignored.
-* Rename them to `jellyfin-server.deb` and `jellyfin-web.deb`.
-* Move the 2 .deb files into the project folder.
-
 ## 3. Build and run using Docker
 * Make sure docker engine or service is running
 * Open a terminal and use `cd` to go to the project
@@ -88,7 +81,8 @@ You will see the "Welcome to Jellyfin!" screen at this moment.
 * If Jellyfin display the 'Select server' page: Try restarting the container, wait for a bit, then open `http://localhost:8096` on a **private tab**.
 * Stream is slow: If you're using Google Drive, you should setup custom API on the Google Console.
 * Media did not show up: Try 'Scan Metadata' on the library. If you're using custom mount point, make sure the path is correct.
-## 6. Afterwords
+
+# Afterwords
 This project is just for fun. There are many better ways to host Jellyfin on your computer, but this method only require Docker to be installed.
 
 If you managed to host the container on a cloud server, then you don't need to install anything on your computer at all.
