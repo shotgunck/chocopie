@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends --no-install-su
     apt-get install -y --no-install-recommends --no-install-suggests jellyfin-server jellyfin-web && \
     rm -rf /var/lib/apt/lists/* && rm -rf /var/cache/apt && apt-get clean && \
     ln -s /usr/share/jellyfin/web/ /usr/lib/jellyfin/bin/jellyfin-web && \
-    mkdir -p /mnt/cloud
+    mkdir -p /media
 
 COPY rclone.conf /usr/local/bin/
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
