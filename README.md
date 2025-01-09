@@ -21,7 +21,7 @@ git clone https://github.com/shotgunck/chocopie
 ```
 
 ## 2. Get `rclone.conf`
-* Assume your media are stored on a Google Drive. Go to https://rclone.org/drive/ and do a basic setup. You can try `rclone mount` on your host computer once you're done.
+* Assume your media are stored on a Google Drive. Go to https://rclone.org/drive/ and do a basic setup. You can try `rclone mount` on your local computer once you're done.
 
 * After that rclone will generate a `rclone.conf` that contains your Google Drive credentials.
 * On Windows, it can be found at `C:\Users\your-user\AppData\Roaming\rclone`
@@ -47,6 +47,7 @@ Additionally, you can remove 'RUN mkdir -p /media' in the Dockerfile if you use 
 ## 2. Get `jellyfin`
 * Go to https://repo.jellyfin.org/?path=/server/ubuntu/latest-stable/amd64
 * Download 2 files: `jellyfin-server_<version>+ubu2204_amd64.deb` and `jellyfin-web_<version>+ubu2204_all.deb`. The others can be ignored.
+* Rename them to `jellyfin-server.deb` and `jellyfin-web.deb`.
 * Move the 2 .deb files into the project folder.
 
 ## 3. Build and run using Docker
